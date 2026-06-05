@@ -1,0 +1,29 @@
+// composables/useReveal.ts
+// Intersection Observer para animações de entrada ao rolar a página
+
+export function useReveal() {
+  const observe = () => {
+    if (import.meta.client) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      )
+
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+        observer.observe(el)
+      })
+    }
+  }
+
+  onMounted(() => {
+    // Pequeno delay para garantir que o DOM está pronto
+    setTimeout(observe, 100)
+  })
+}

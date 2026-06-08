@@ -1,42 +1,54 @@
 <template>
-  <section class="bg-[#0d0c00] relative py-28 px-6 md:px-16 overflow-hidden">
-    <!-- Gold glow -->
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-gold/8 blur-[80px] pointer-events-none rounded-full"></div>
+  <!-- Bloco CTA com imagem de fundo -->
+  <section class="relative py-28 px-6 md:px-16 overflow-hidden">
+    <!-- Imagem de fundo -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/bg-cta.png" alt="" class="w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-black/65"></div>
+    </div>
 
     <div class="max-w-3xl mx-auto relative z-10 text-center">
       <div class="reveal">
-        <p class="text-gold text-xs tracking-[0.4em] uppercase mb-6 font-sans font-light">Aprendizado Sem Fronteiras</p>
-        <h2 class="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
-          Você pode <span class="italic">aprender técnica</span>
+        <h2 class="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-2">
+          {{ t('cta_title1') }} <span class="text-gold font-bold">{{ t('cta_title_gold') }}</span>
         </h2>
-        <h2 class="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-10">
-          em qualquer lugar.
+        <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-10">
+          {{ t('cta_title2') }}
         </h2>
 
-        <div class="gold-divider mb-8"></div>
-
-        <p class="text-white/60 text-sm md:text-base leading-relaxed font-light mb-12 max-w-lg mx-auto">
-          Mas quando você vem ao Brasil, você aprende com <strong class="text-white">a cirurgiã que criou a técnica</strong>. 
-          A presença ao lado da Dra. Araquele transforma a forma como você enxerga a medicina capilar.
+        <p class="text-white reveal-text text-sm md:text-[20px] leading-relaxed mb-12 mx-auto">
+          {{ t('cta_body') }}
+          <br><span class="font-bold text-gold">{{ t('cta_body_gold') }}</span>
         </p>
 
-        <a href="#inscricao" class="btn-shimmer btn-gold inline-block animate-pulse-gold text-base px-12 py-5">
-          APLICAR PARA A IMERSÃO
+        <a href="#" class="btn-shimmer btn-gold btn-hero animate-pulse-gold inline-block px-14 py-4 font-bold uppercase" @click.prevent="openModal">
+          {{ t('cta_btn') }}
         </a>
       </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <div class="mt-20 pt-8 border-t border-gold/10 flex flex-col md:flex-row items-center justify-between gap-4 max-w-6xl mx-auto">
+  <!-- Footer separado, fundo escuro puro -->
+  <footer class="bg-[#0a0900] py-8 px-6 md:px-16 border-t border-gold/10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 max-w-6xl mx-auto">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 border border-gold/40 rounded-full flex items-center justify-center">
-          <span class="text-gold text-xs font-serif">DA</span>
-        </div>
-        <span class="text-white/40 text-xs tracking-widest uppercase font-sans font-light">Dra. Araquele Coelho</span>
+        <img
+          src="~/assets/images/logo-anayene-craveiro.webp"
+          alt="Dra. Anayene Craveiro"
+          class="h-8 w-auto object-contain opacity-60"
+        />
       </div>
       <p class="text-white/20 text-xs font-sans font-light">
-        © {{ new Date().getFullYear() }} Todos os direitos reservados.
+        © {{ new Date().getFullYear() }} {{ t('cta_copyright') }}
       </p>
     </div>
-  </section>
+  </footer>
 </template>
+
+<script setup lang="ts">
+
+import { useLocale } from '~/composables/useLocale'
+import { useModal } from '~/composables/useModal'
+const { t } = useLocale()
+const { openModal } = useModal()
+</script>

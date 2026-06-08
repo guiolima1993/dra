@@ -1,52 +1,48 @@
 <template>
-  <section class="section-light relative py-24 px-6 md:px-16 overflow-hidden">
-    <!-- Decorative background -->
-    <div class="absolute inset-0 pointer-events-none opacity-5">
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23c9a96e\' fill-opacity=\'1\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E')]"></div>
+  <section class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
+
+    <div class="absolute inset-x-0 top-[18%] h-[62%] pointer-events-none" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);">
+      <img
+        src="/images/bg-after.png"
+        alt="Fundo da seção"
+        class="w-full h-full object-cover object-center grayscale contrast-125 brightness-75"
+        onerror="this.style.display='none'"
+      />
     </div>
 
-    <div class="max-w-6xl mx-auto relative z-10">
-      <!-- Header -->
-      <div class="reveal text-center mb-4">
-        <p class="text-gold text-xs tracking-[0.3em] uppercase mb-6 font-sans font-light">Imersão Presencial</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-bold text-dark-bg leading-tight">
-          3 dias,
-        </h2>
-        <h2 class="font-serif text-4xl md:text-5xl font-bold text-dark-bg leading-tight mb-4">
-          Acesso total aos bastidores.
-        </h2>
-        <div class="w-16 h-px bg-gold mx-auto mb-12"></div>
+    <div class="max-w-[780px] mx-auto relative z-10">
+      <div class="text-center mb-8 md:mb-10">
+        <h2 class="reveal font-serif text-4xl md:text-5xl text-[#f0e5d2] leading-none">{{ t('tres_title1') }}</h2>
+        <h3 class="reveal font-serif text-4xl md:text-5xl text-[#f0e5d2] leading-none">{{ t('tres_title2') }}</h3>
       </div>
 
-      <!-- 4 Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
-        <div
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        <article
           v-for="(card, i) in cards"
           :key="i"
-          class="reveal group relative bg-white/60 backdrop-blur-sm border border-gold/20 p-8 hover:border-gold/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-default"
+          class="reveal pillar-card px-5 py-4 md:px-6 md:py-5"
         >
-          <!-- Roman numeral -->
-          <div class="absolute top-0 right-6 -translate-y-1/2">
-            <span class="font-serif text-5xl font-bold text-gold/20 group-hover:text-gold/40 transition-colors duration-500 select-none">
-              {{ card.numeral }}
-            </span>
-          </div>
+          <div class="font-serif text-[52px] md:text-[100px] leading-[0.9] text-[#f0e5d2] text-center mb-2">{{ card.numeral }}</div>
+          <h4 class="font-serif font-bold text-[#f4ead8] text-[34px] md:text-[32px] text-center leading-tight mb-3">
+            <span>{{ card.title }}</span>
+            <span v-if="card.titleGold" class="block text-gold">{{ card.titleGold }}</span>
+          </h4>
+          <p class="text-white reveal-text text-[11px] md:text-[18px] leading-relaxed">{{ card.description }}</p>
+        </article>
+      </div>
 
-          <!-- Card content -->
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-dark-bg flex items-center justify-center group-hover:bg-gold transition-colors duration-500">
-              <span class="font-serif text-gold text-sm font-bold group-hover:text-dark-bg transition-colors duration-500">
-                {{ card.numeral }}
-              </span>
-            </div>
-            <div>
-              <h3 class="font-serif text-lg font-bold text-dark-bg mb-3 leading-tight">{{ card.title }}</h3>
-              <p class="text-dark-bg/60 text-sm leading-relaxed font-light">{{ card.description }}</p>
-            </div>
+      <div class="reveal mt-10 md:mt-12">
+        <div class="ecosystem-image-wrap w-full max-w-[860px] mx-auto rounded-[55px] border border-gold/45 bg-black/35 overflow-hidden">
+          <img
+            src="/images/ecossistema-hair-of-brasil.png"
+            alt="Ecossistema Hair of Brasil"
+            class="w-full h-auto object-cover"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <div style="display:none" class="w-full min-h-[240px] md:min-h-[360px] flex items-center justify-center text-center px-6">
+            <p class="text-gold/75 text-sm md:text-base">Adicione /public/images/ecossistema-hair-of-brasil.png</p>
           </div>
-
-          <!-- Bottom accent line -->
-          <div class="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-700"></div>
         </div>
       </div>
     </div>
@@ -54,30 +50,50 @@
 </template>
 
 <script setup lang="ts">
-const cards = [
-  {
-    numeral: 'I',
-    title: 'Acompanhamento da minha clínica',
-    description:
-      'Uma experiência única acompanhando uma consultoria platinum de alta excelência cirúrgica, o funcionamento da equipe, a organização da agenda e os bastidores reais da clínica da Dra. Araquele com padrões internacionais.',
-  },
-  {
-    numeral: 'II',
-    title: 'Consultoria estratégica com a Dra. Araquele',
-    description:
-      'Uma sessão única e aprofundada para estruturar seu plano de transplante capilar com excelência estratégica e posicionamento de mercado. Você sai com um plano claro, real e aplicável.',
-  },
-  {
-    numeral: 'III',
-    title: 'Cirurgia ao vivo com a Dra. Araquele',
-    description:
-      'Você acompanha de perto uma cirurgia real realizada pela Dra. A fase técnica é única, observando cada detalhe da última etapa e retirada. A fase técnica é aplicada com toda a equipe.',
-  },
-  {
-    numeral: 'IV',
-    title: 'Plano de ação para médicos que',
-    description:
-      'Você sai com um roteiro personalizado: metas, protocolos, plano de divulgação e estratégia de marketing médico ético para implementar ao voltar à sua cidade — com suporte posterior.',
-  },
-]
+
+import { useLocale } from '~/composables/useLocale'
+import { computed } from 'vue'
+const { t } = useLocale()
+const cards = computed(() => [
+  { numeral: 'I', title: t('tres_c1_title'), titleGold: t('tres_c1_gold'), description: t('tres_c1_desc') },
+  { numeral: 'II', title: t('tres_c2_title'), titleGold: t('tres_c2_gold'), description: t('tres_c2_desc') },
+  { numeral: 'III', title: t('tres_c3_title'), titleGold: t('tres_c3_gold'), description: t('tres_c3_desc') },
+  { numeral: 'IV', title: t('tres_c4_title'), titleGold: t('tres_c4_gold'), description: t('tres_c4_desc') },
+])
 </script>
+
+<style scoped>
+.pillar-card {
+  min-height: 260px;
+  border: 2px solid rgba(201, 169, 110, 0.68);
+  border-top-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background: transparent;
+}
+
+.ecosystem-image-wrap {
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(201, 169, 110, 0.22),
+    0 0 30px rgba(201, 169, 110, 0.25),
+    0 0 72px rgba(201, 169, 110, 0.18);
+}
+
+.ecosystem-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(201, 169, 110, 0.34) 0%,
+    rgba(201, 169, 110, 0.18) 45%,
+    rgba(201, 169, 110, 0) 78%
+  );
+  filter: blur(24px);
+  z-index: -1;
+  pointer-events: none;
+}
+</style>

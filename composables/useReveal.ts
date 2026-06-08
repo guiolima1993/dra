@@ -1,6 +1,8 @@
 // composables/useReveal.ts
 // Intersection Observer para animações de entrada ao rolar a página
 
+import { onMounted } from 'vue'
+
 export function useReveal() {
   const observe = () => {
     if (import.meta.client) {

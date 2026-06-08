@@ -1,74 +1,101 @@
 <template>
-  <section id="inscricao" class="section-dark relative py-28 px-6 md:px-16 overflow-hidden">
-    <!-- Gold glow background -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[100px] pointer-events-none"></div>
+  <section id="inscricao" class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
 
-    <div class="max-w-3xl mx-auto relative z-10 text-center">
-      <!-- Header -->
-      <div class="reveal mb-16">
-        <p class="text-gold text-xs tracking-[0.4em] uppercase mb-6 font-sans font-light">Vagas Limitadas</p>
-        <h2 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
-          Por que as vagas <span class="italic text-gold underline decoration-gold/40">são limitadas</span><br />
-          de verdade.
+    <div class="max-w-[1100px] mx-auto relative z-10 text-center">
+
+      <!-- Título -->
+      <div class="reveal mb-20">
+        <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+          {{ t('inv_title') }} <span class="text-red-500">{{ t('inv_title_red') }}</span><br />{{ t('inv_title2') }}
         </h2>
-        <div class="gold-divider mt-6 mb-8"></div>
-        <p class="text-white/60 text-sm md:text-base leading-relaxed font-light max-w-xl mx-auto">
-          A Dra. Araquele conduz pessoalmente todos os dias. Por isso a profundidade e a
-          qualidade do ensino se mantém em altíssimo nível. Cada médico recebe toda a atenção,
-          todos os anos ago colaborar sobre o nível de treinamento. Quando as vagas fecham, a
-          turma não abre mais.
-        </p>
+        <p class="text-white/80 reveal-text text-sm md:text-[18px] leading-relaxed mb-4" v-html="t('inv_body1')"></p>
+        <p class="text-white/80 reveal-text text-sm md:text-[18px] leading-relaxed mb-2" v-html="t('inv_body2')"></p>
+        <p class="text-white/80 reveal-text text-sm md:text-[18px] leading-relaxed" v-html="t('inv_body3')"></p>
       </div>
 
-      <!-- Price box -->
-      <div class="reveal-scale relative inline-block w-full max-w-lg">
-        <!-- Decorative corners -->
-        <div class="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-gold/60"></div>
-        <div class="absolute -top-3 -right-3 w-10 h-10 border-t-2 border-r-2 border-gold/60"></div>
-        <div class="absolute -bottom-3 -left-3 w-10 h-10 border-b-2 border-l-2 border-gold/60"></div>
-        <div class="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-gold/60"></div>
+      <!-- Card investimento -->
+      <div class="reveal investimento-card relative mx-auto max-w-[1100px] rounded-tr-[22px] rounded-bl-[22px] border border-gold/40 overflow-hidden" style="background: url('/images/bg-inv.jpg') center/cover no-repeat;">        <div class="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
+      <div class="relative z-10 p-10 md:p-14 text-center">
+        <!-- Corner ribbon -->
+        <div class="corner-ribbon"></div>
 
-        <div class="bg-dark-card border border-gold/30 p-10">
-          <p class="text-white/50 text-xs tracking-widest uppercase mb-2 font-sans font-light">Investimento</p>
-          <div class="bg-gold/10 border border-gold/30 px-8 py-4 mb-6 inline-block w-full">
-            <p class="font-serif text-3xl md:text-4xl font-bold text-gold">R$ 50.000,00</p>
-          </div>
+        <p class="font-bold text-2xl md:text-6xl text-white mb-5">{{ t('inv_card_title') }}</p>
 
-          <!-- Inclusions list -->
-          <ul class="text-left space-y-3 mb-8">
-            <li
-              v-for="(item, i) in inclusions"
-              :key="i"
-              class="flex items-start gap-3 text-sm text-white/70 font-light"
-            >
-              <svg class="w-4 h-4 text-gold mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              {{ item }}
-            </li>
-          </ul>
-
-          <!-- CTA Button -->
-          <a
-            href="#"
-            class="btn-shimmer btn-gold block text-center w-full animate-pulse-gold"
-          >
-            QUERO PARTICIPAR / VER AS POSSIBILIDADES
-          </a>
+        <div class="inline-block border border-gold/90 rounded-full px-8 pt-3 pb-5 mb-8">
+          <p class="font-semibold reveal-text text-2xl md:text-6xl text-[#f0e5d2]">R$ 50.000,00</p>
         </div>
+
+        <p class="text-white reveal-text text-sm md:text-[22px] leading-relaxed mb-6 m mx-auto">
+          {{ t('inv_return1') }}<br />
+          {{ t('inv_return2') }}
+        </p>
+
+        <p class="text-white font-bold reveal-text text-xl tracking-widest uppercase mb-8 mt-8">{{ t('inv_incluso') }}</p>
+
+        <ul class="text-left space-y-2 mb-8">
+          <li
+            v-for="(item, i) in inclusions"
+            :key="i"
+            class="text-white reveal-text text-sm md:text-[22px] leading-snug"
+            v-html="'&bull; ' + item"
+          ></li>
+        </ul>
+
+        <a
+          href="#"
+          class="btn-shimmer btn-gold btn-hero animate-pulse-gold inline-block px-10 py-4 font-bold uppercase"
+          @click.prevent="openModal"
+        >
+          {{ t('inv_cta') }}
+        </a>
+      </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const inclusions = [
-  'Imersão presencial de 3 dias no Brasil',
-  'Acesso aos bastidores reais da Clínica da Dra. Araquele',
-  'Cirurgia ao vivo com a Dra. Araquele',
-  'Plano de ação personalizado para sua clínica',
-  'Consultoria estratégica com a Dra. Araquele',
-  'Certificação de participação',
-  'Suporte pós-imersão por 30 dias',
-]
+
+import { useLocale } from '~/composables/useLocale'
+import { useModal } from '~/composables/useModal'
+import { computed } from 'vue'
+const { t } = useLocale()
+const { openModal } = useModal()
+
+const inclusions = computed(() => [
+  t('inv_inc1'), t('inv_inc2'), t('inv_inc3'),
+  t('inv_inc4'), t('inv_inc5'), t('inv_inc6'), t('inv_inc7'),
+])
 </script>
+
+<style scoped>
+.corner-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.corner-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 70px 70px 0;
+  border-color: transparent rgba(201, 169, 110, 0.75) transparent transparent;
+  filter: drop-shadow(-2px 2px 3px rgba(0,0,0,0.4));
+}
+
+.investimento-card {
+  box-shadow:
+    0 0 0 1px rgba(201, 169, 110, 0.12),
+    0 0 40px rgba(201, 169, 110, 0.08);
+}
+</style>

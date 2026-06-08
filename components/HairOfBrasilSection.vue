@@ -1,69 +1,95 @@
 <template>
-  <section class="bg-[#0d0c00] relative py-28 px-6 md:px-16 overflow-hidden">
-    <div class="max-w-4xl mx-auto relative z-10">
-      <!-- Header -->
-      <div class="reveal text-center mb-16">
-        <p class="text-gold/70 text-xs tracking-[0.4em] uppercase mb-4 font-sans font-light">Ecossistema</p>
-        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-2">HAIR OF BRASIL</h2>
-        <p class="font-serif text-xl italic text-gold">Dra. Araquele</p>
-        <div class="gold-divider mt-6"></div>
+  <section class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
+
+    <div class="max-w-[840px] mx-auto relative z-10">
+
+      <div class="reveal text-center mb-10">
+        <h2 class="font-serif text-4xl md:text-5xl text-white font-bold leading-tight">
+          {{ t('paraquem_title1') }}
+        </h2>
+        <h2 class="font-serif text-4xl md:text-5xl text-gold font-bold leading-tight">
+          {{ t('paraquem_title2') }}
+        </h2>
       </div>
 
-      <!-- Circular Infographic -->
-      <div class="reveal relative flex items-center justify-center">
-        <div class="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px]">
-          <!-- Outer ring -->
-          <div class="absolute inset-0 rounded-full border border-gold/20 animate-spin-slow"></div>
-          <!-- Middle ring -->
-          <div class="absolute inset-8 rounded-full border border-gold/30"></div>
-          <!-- Inner circle -->
-          <div class="absolute inset-16 rounded-full bg-dark-card border border-gold/40 flex items-center justify-center flex-col gap-1">
-            <div class="w-8 h-8 border border-gold rounded-full flex items-center justify-center mb-1">
-              <span class="text-gold text-xs font-serif">H</span>
-            </div>
-            <p class="font-serif text-gold text-xs font-bold tracking-widest text-center">HAIR</p>
-            <p class="text-white/40 text-[10px] tracking-widest text-center">OF BRASIL</p>
-          </div>
+      <ul class="mb-14">
+        <li
+          v-for="(item, i) in forWho"
+          :key="'for-' + i"
+          class="reveal check-item flex items-center gap-4 px-2 py-3"
+          :class="{ 'first-item': i === 0 }"
+        >
+          <span class="check-icon flex-shrink-0 text-green-400 text-2xl font-bold w-7 text-center leading-none">✓</span>
+          <span class="text-white reveal-text text-[17px] md:text-[19px] leading-snug" v-html="item"></span>
+        </li>
+      </ul>
 
-          <!-- Orbit items -->
-          <div
-            v-for="(item, i) in orbitItems"
-            :key="i"
-            class="absolute"
-            :style="getOrbitStyle(i, orbitItems.length)"
-          >
-            <div
-              class="bg-dark-card border border-gold/30 px-3 py-2 text-center min-w-[100px] hover:border-gold/70 hover:bg-dark-bg transition-all duration-300 cursor-default group"
-              style="transform: translate(-50%, -50%)"
-            >
-              <p class="text-gold text-[10px] font-bold tracking-wider uppercase group-hover:text-gold-light transition-colors">{{ item.title }}</p>
-              <p v-if="item.sub" class="text-white/40 text-[9px] mt-0.5">{{ item.sub }}</p>
-            </div>
-          </div>
-        </div>
+      <div class="reveal text-center mb-10">
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          <span class="text-gold font-bold">{{ t('paraquem_not_title').split(' ')[0] }} </span> {{ t('paraquem_not_title').split(' ').slice(1).join(' ') }}
+        </h2>
       </div>
+
+      <ul>
+        <li
+          v-for="(item, i) in notForWho"
+          :key="'not-' + i"
+          class="reveal cross-item flex items-center gap-4 px-2 py-3"
+          :class="{ 'first-item': i === 0 }"
+        >
+          <span class="cross-icon flex-shrink-0 text-red-500 text-2xl font-bold w-7 text-center leading-none">✕</span>
+          <span class="text-white text-[17px] reveal-text md:text-[19px] leading-snug" v-html="item"></span>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const orbitItems = [
-  { title: 'Técnica FUE', sub: 'Implantação DirecF™' },
-  { title: 'Protocolo Clínico', sub: 'Padrão Premium' },
-  { title: 'Marketing Médico', sub: 'Autoridade Digital' },
-  { title: 'Gestão de Clínica', sub: 'Alta Performance' },
-  { title: 'Pós-operatório', sub: 'Resultados Reais' },
-  { title: 'Ética Profissional', sub: 'CFM e Boas Práticas' },
+
+import { useLocale } from '~/composables/useLocale'
+const { t } = useLocale()
+
+const forWho = [
+  'Já realizam ou querem iniciar na cirurgia capilar com posicionamento high ticket',
+  'Estão cansados de competir por preço e querem construir percepção de valor real',
+  'Querem fazer transição de carreira e se tornarem empresários de sucesso na área de transplante capilar',
+  'Liderar time técnico de sucesso e ecossistema',
+  'Querem entender o modelo de operação por trás de uma empresa admirada',
+  'Desejam reduzir anos de tentativa e erro aprendendo diretamente com quem já construiu e realmente sabe realizar um transplante capilar',
 ]
 
-function getOrbitStyle(index: number, total: number) {
-  const angle = (index / total) * 2 * Math.PI - Math.PI / 2
-  const radius = 50 // percentage from center
-  const x = 50 + radius * Math.cos(angle)
-  const y = 50 + radius * Math.sin(angle)
-  return {
-    left: `${x}%`,
-    top: `${y}%`,
-  }
-}
+const notForWho = [
+  'Você quer apenas assistir a uma cirurgia (existem cursos para isso)',
+  'Você que quer ir para o caminho mais fácil: <strong>FICAR NA MÃO DE FREELANCER</strong>',
+  'Você busca um protocolo para copiar, aqui você aprende a construir o seu',
+  'Você não está comprometido com posicionamento high ticket',
+]
 </script>
+
+<style scoped>
+.check-item {
+  border-bottom: 2px solid rgba(201, 169, 110, 0.35);
+}
+
+.check-item.first-item {
+  border-top: 2px solid rgba(201, 169, 110, 0.35);
+}
+
+.check-icon {
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.9), 0 0 18px rgba(74, 222, 128, 0.6);
+}
+
+.cross-item {
+  border-bottom: 2px solid rgba(201, 169, 110, 0.35);
+}
+
+.cross-item.first-item {
+  border-top: 2px solid rgba(201, 169, 110, 0.35);
+}
+
+.cross-icon {
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.9), 0 0 18px rgba(239, 68, 68, 0.6);
+}
+</style>

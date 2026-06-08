@@ -8,10 +8,13 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@nuxtjs/tailwindcss'],
+  imports: {
+    exclude: ['useLocale'],
+  },
   css: ['~/assets/css/main.css'],
   app: {
     head: {
-      title: 'Dra. Araquele — Método FUE & Implantação DirecF',
+      title: 'Dra. Arayene Craveiro — Método FUE + Implantação Direta®',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -22,18 +25,6 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.cdnfonts.com',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.cdnfonts.com/css/montserrat',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.cdnfonts.com/css/cormorant-garamond',
-        },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
           rel: 'preconnect',
@@ -42,7 +33,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap',
         },
       ],
     },

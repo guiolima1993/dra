@@ -24,8 +24,8 @@
 
           <!-- Header -->
           <div class="text-center mb-7">
-            <h3 class="font-bold text-2xl md:text-3xl text-white mb-2">Quero Participar</h3>
-            <p class="text-white/50 text-sm">Preencha seus dados para verificar disponibilidade</p>
+            <h3 class="font-bold text-2xl md:text-3xl text-white mb-2">{{ t('modal_title') }}</h3>
+            <p class="text-white/50 text-sm">{{ t('modal_subtitle') }}</p>
           </div>
 
           <!-- Sucesso -->
@@ -35,25 +35,25 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p class="text-white text-lg font-semibold mb-1">Solicitação enviada!</p>
-            <p class="text-white/50 text-sm">Entraremos em contato em breve.</p>
+            <p class="text-white text-lg font-semibold mb-1">{{ t('modal_success_title') }}</p>
+            <p class="text-white/50 text-sm">{{ t('modal_success_body') }}</p>
           </div>
 
           <!-- Formulário -->
           <form v-else @submit.prevent="submit" class="space-y-4">
             <div>
-              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">Nome completo</label>
+              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">{{ t('modal_label_name') }}</label>
               <input
                 v-model="form.name"
                 type="text"
                 required
-                placeholder="Seu nome"
+                :placeholder="t('modal_placeholder_name')"
                 class="w-full bg-black/30 border border-gold/25 focus:border-gold/60 outline-none px-4 py-3 text-white text-sm placeholder-white/20 transition-colors rounded-none"
               />
             </div>
 
             <div>
-              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">Telefone / WhatsApp</label>
+              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">{{ t('modal_label_phone') }}</label>
               <input
                 v-model="form.phone"
                 type="tel"
@@ -66,7 +66,7 @@
             </div>
 
             <div>
-              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">E-mail</label>
+              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">{{ t('modal_label_email') }}</label>
               <input
                 v-model="form.email"
                 type="email"
@@ -77,12 +77,12 @@
             </div>
 
             <div>
-              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">Número do CRM</label>
+              <label class="block text-white/60 text-xs tracking-widest uppercase mb-1">{{ t('modal_label_crm') }}</label>
               <input
                 v-model="form.crm"
                 type="text"
                 required
-                placeholder="CRM 000000 / UF"
+                :placeholder="t('modal_placeholder_crm')"
                 class="w-full bg-black/30 border border-gold/25 focus:border-gold/60 outline-none px-4 py-3 text-white text-sm placeholder-white/20 transition-colors rounded-none"
               />
             </div>
@@ -94,8 +94,8 @@
               :disabled="loading"
               class="btn-shimmer btn-gold btn-hero animate-pulse-gold w-full py-4 font-bold uppercase tracking-widest text-sm mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span v-if="loading">Enviando...</span>
-              <span v-else>Enviar</span>
+              <span v-if="loading">{{ t('modal_sending') }}</span>
+              <span v-else>{{ t('modal_submit') }}</span>
             </button>
           </form>
         </div>
@@ -106,9 +106,11 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+import { useLocale } from '~/composables/useLocale'
 
 defineProps<{ modelValue: boolean }>()
 const emit = defineEmits(['update:modelValue'])
+const { t } = useLocale()
 
 const WEBHOOK_URL = 'https://core.emfy.com/widgets/webhooks/?module=site_integration&amo_account_id=33568291&hook_id=29fd9d74-b41a-476c-b70d-3f6bd68ce478'
 

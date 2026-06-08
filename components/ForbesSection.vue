@@ -49,19 +49,19 @@
 </template>
 
 <script setup lang="ts">
-
+import { computed } from 'vue'
 import { useLocale } from '~/composables/useLocale'
 const { t } = useLocale()
 
-const achievements = [
-  'Criou o Método FUE + Implantação Direta e técnica própria com resultados documentados',
-  'Foi pioneira na técnica Long Hair no Brasil',
-  'Palestrou em congressos nacionais e internacionais',
-  'Foi destaque da Forbes em 2025',
-  'Construiu a Hair of Brasil como ecossistema de medicina capilar premium',
-  'Formou profissionais e equipes de diferentes regiões do Brasil',
-  'Já treinou redes de franquias no Brasil todo.',
-]
+const achievements = computed(() => [
+  t('forbes_a1'),
+  t('forbes_a2'),
+  t('forbes_a3'),
+  t('forbes_a4'),
+  t('forbes_a5'),
+  t('forbes_a6'),
+  t('forbes_a7'),
+])
 </script>
 
 <style scoped>

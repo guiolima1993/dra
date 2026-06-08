@@ -1,14 +1,14 @@
 <template>
-  <section class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+  <section class="section-dark relative py-10 md:py-20 lg:py-24 px-6 md:px-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
 
     <div class="max-w-[840px] mx-auto relative z-10">
 
       <div class="reveal text-center mb-10">
-        <h2 class="font-serif text-4xl md:text-5xl text-white font-bold leading-tight">
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight">
           {{ t('paraquem_title1') }}
         </h2>
-        <h2 class="font-serif text-4xl md:text-5xl text-gold font-bold leading-tight">
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-gold font-bold leading-tight">
           {{ t('paraquem_title2') }}
         </h2>
       </div>
@@ -26,7 +26,7 @@
       </ul>
 
       <div class="reveal text-center mb-10">
-        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
           <span class="text-gold font-bold">{{ t('paraquem_not_title').split(' ')[0] }} </span> {{ t('paraquem_not_title').split(' ').slice(1).join(' ') }}
         </h2>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <!-- Bloco CTA com imagem de fundo -->
-  <section class="relative py-28 px-6 md:px-16 overflow-hidden">
+  <section class="relative py-10 md:py-20 lg:py-28 px-6 md:px-16 overflow-hidden">
     <!-- Imagem de fundo -->
     <div class="absolute inset-0 z-0">
       <img src="/images/bg-cta.png" alt="" class="w-full h-full object-cover object-center" />
@@ -9,10 +9,10 @@
 
     <div class="max-w-3xl mx-auto relative z-10 text-center">
       <div class="reveal">
-        <h2 class="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-2">
+        <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2">
           {{ t('cta_title1') }} <span class="text-gold font-bold">{{ t('cta_title_gold') }}</span>
         </h2>
-        <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-10">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 md:mb-10">
           {{ t('cta_title2') }}
         </h2>
 

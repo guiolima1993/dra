@@ -1,5 +1,5 @@
 <template>
-  <section class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+  <section class="section-dark relative py-10 md:py-20 lg:py-24 px-6 md:px-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
 
     <div class="absolute inset-x-0 top-[18%] h-[62%] pointer-events-none" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);">

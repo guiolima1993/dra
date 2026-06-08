@@ -9,7 +9,7 @@ const translations: Record<Locale, Record<string, string>> = {
   pt: {
     hero_title: 'Domine o método de transplante capilar que se tornou destaque internacionalmente.',
     hero_subtitle: 'Experiência presencial de 3 dias para médicos que querem elevar o padrão técnico e construir uma clínica previsível, valorizada e com resultados.',
-    hero_body: 'Conheça o Método FUE + Implantação Direta® em uma imersão exclusiva dentro da Hair of Brasil (uma das operações de medicina capilar brasileiras com maior reconhecimento global.)',
+    hero_body: 'Conheça o <strong>Método FUE + Implantação Direta®</strong> em uma imersão exclusiva dentro da Hair of Brasil (uma das operações de medicina capilar brasileiras com maior reconhecimento global.)',
     hero_urgency: 'Experiência exclusiva. Vagas limitadas.',
     hero_cta: 'Quero Participar!',
     nova_title: 'Faça parte da nova geração',
@@ -73,7 +73,7 @@ const translations: Record<Locale, Record<string, string>> = {
   en: {
     hero_title: 'Master the hair transplant method that became an international highlight.',
     hero_subtitle: '3-day in-person experience for physicians who want to raise technical standards and build a predictable, valued clinic with real results.',
-    hero_body: 'Discover the FUE + Direct Implantation Method® in an exclusive immersion inside Hair of Brasil.',
+    hero_body: 'Discover the <strong>FUE + Direct Implantation Method®</strong> in an exclusive immersion inside Hair of Brasil.',
     hero_urgency: 'Exclusive experience. Limited spots.',
     hero_cta: 'I Want to Participate!',
     nova_title: 'Join the new generation',
@@ -137,7 +137,7 @@ const translations: Record<Locale, Record<string, string>> = {
   es: {
     hero_title: 'Domina el método de trasplante capilar que se convirtió en referencia internacional.',
     hero_subtitle: 'Experiencia presencial de 3 días para médicos que quieren elevar el estándar técnico y construir una clínica predecible, valorada y con resultados.',
-    hero_body: 'Conoce el Método FUE + Implantación Directa® en una inmersión exclusiva dentro de Hair of Brasil.',
+    hero_body: 'Conoce el <strong>Método FUE + Implantación Directa®</strong> en una inmersión exclusiva dentro de Hair of Brasil.',
     hero_urgency: 'Experiencia exclusiva. Cupos limitados.',
     hero_cta: '¡Quiero Participar!',
     nova_title: 'Sé parte de la nueva generación',

@@ -116,13 +116,19 @@
 
 .btn-hero {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1;
   color: #1b1608;
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 0 24px rgba(201, 169, 110, 0.35);
+}
+
+@media (min-width: 768px) {
+  .btn-hero {
+    font-size: 1.5rem;
+  }
 }
 
 .reveal-text {

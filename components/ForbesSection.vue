@@ -1,13 +1,13 @@
 <template>
-  <section class="section-dark relative py-20 md:py-24 px-6 md:px-16 overflow-hidden">
+  <section class="section-dark relative py-10 md:py-20 lg:py-24 px-6 md:px-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0900] via-[#080700] to-[#090800] pointer-events-none"></div>
 
     <div class="max-w-[1320px] mx-auto relative z-10">
       <div class="text-center mb-12 md:mb-14">
-        <h2 class="reveal font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-none mb-6">
+        <h2 class="reveal font-serif text-3xl md:text-4xl lg:text-6xl font-semibold text-white leading-tight mb-6">
           {{ t('forbes_title') }}
         </h2>
-        <p class="reveal reveal-text text-white/80 text-[.7rem] md:text-4xl lg:text-[1.2rem] font-normal leading-relaxed max-w-4xl mx-auto">
+        <p class="reveal reveal-text text-white/80 text-sm md:text-base lg:text-[1.2rem] font-normal leading-relaxed max-w-4xl mx-auto">
           {{ t('forbes_body') }}
           <br />
           {{ t('forbes_years') }}
@@ -20,22 +20,22 @@
             <li
               v-for="(item, i) in achievements"
               :key="i"
-              class="reveal reveal-text text-white text-[.7rem] md:text-4xl lg:text-[1.2rem] leading-snug"
+              class="reveal reveal-text text-white text-sm md:text-base lg:text-[1.2rem] leading-snug"
             >
               - {{ item }}
             </li>
           </ul>
 
           <blockquote class="reveal reveal-text bg-gold text-dark-bg rounded-none rounded-tr-[18px] rounded-bl-[18px] overflow-hidden px-4 py-3 md:px-5 md:py-4">
-            <p class="italic font-semibelezabold text-[.7rem] md:text-4xl lg:text-[1.2rem] leading-snug">
+            <p class="italic font-semibold text-sm md:text-base lg:text-[1.2rem] leading-snug">
               {{ t('forbes_quote') }}
             </p>
-            <cite class="block mt-2 text-[.7rem] md:text-4xl lg:text-[1.2rem] italic font-bold">{{ t('forbes_author') }}</cite>
+            <cite class="block mt-2 text-sm md:text-base lg:text-[1.2rem] italic font-bold">{{ t('forbes_author') }}</cite>
           </blockquote>
         </div>
 
-        <div class="reveal-right relative flex justify-center lg:justify-end">
-          <div class="forbes-image-wrap relative w-full max-w-[420px] lg:max-w-[600px]">
+        <div class="reveal-right relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <div class="forbes-image-wrap relative w-full max-w-[340px] md:max-w-[420px] lg:max-w-[600px]">
             <img
               src="/images/imagem-criativos-forbes.png"
               alt="Dra. Arayene em destaque na Forbes"
@@ -65,6 +65,7 @@ const achievements = [
 </script>
 
 <style scoped>
+/* Desktop: fade para a direita (imagem ao lado direito do layout) */
 .forbes-image {
   -webkit-mask-image: linear-gradient(
     to right,
@@ -80,5 +81,13 @@ const achievements = [
     rgba(0, 0, 0, 0.7) 94%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+/* Mobile: imagem centralizada, fade sutil na parte inferior + deslocamento para esquerda */
+@media (max-width: 1023px) {
+  .forbes-image-wrap {
+    margin-left: -60px;
+    max-width: calc(340px + 60px) !important;
+  }
 }
 </style>

@@ -2,9 +2,9 @@
   <!-- Bloco CTA com imagem de fundo -->
   <section class="relative py-10 md:py-20 lg:py-28 px-6 md:px-16 overflow-hidden">
     <!-- Imagem de fundo -->
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-2">
       <img src="/images/bg-cta.png" alt="" class="w-full h-full object-cover object-center" />
-      <div class="absolute inset-0 bg-black/65"></div>
+      <div class="absolute inset-0 bg-black/1"></div>
     </div>
 
     <div class="max-w-3xl mx-auto relative z-10 text-center">
@@ -35,7 +35,7 @@
         <img
           src="~/assets/images/logo-anayene-craveiro.webp"
           alt="Dra. Anayene Craveiro"
-          class="h-8 w-auto object-contain opacity-60"
+          class="h-12 w-auto object-contain opacity-60"
         />
       </div>
       <p class="text-white/20 text-xs font-sans font-light">

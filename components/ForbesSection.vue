@@ -38,7 +38,7 @@
           <div class="forbes-image-wrap relative w-full max-w-[340px] md:max-w-[420px] lg:max-w-[600px]">
             <img
               src="/images/imagem-criativos-forbes.png"
-              alt="Dra. Arayene em destaque na Forbes"
+              alt="Dra. Anayene em destaque na Forbes"
               class="forbes-image w-full h-auto object-contain"
             />
           </div>

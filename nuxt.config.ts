@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   vite: {
     server: {
-      strictPort: false,
+      strictPort: true,
     },
   },
   modules: ['@nuxtjs/tailwindcss'],
@@ -40,6 +40,17 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+      script: [
+        {
+          innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-588WBSX5');`,
+          type: 'text/javascript',
+        },
+      ],
+      noscript: [
+        {
+          innerHTML: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-588WBSX5" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
+        },
       ],
     },
   },

@@ -10,7 +10,7 @@
         <div class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
 
         <!-- Modal -->
-        <div class="relative w-full max-w-[480px] bg-[#0e0c02] border border-gold/40 rounded-tr-[22px] rounded-bl-[22px] p-8 md:p-10 z-10">
+        <div class="relative w-full max-w-[480px] bg-[#0e0c02] border border-gold/60 rounded-tr-[22px] rounded-bl-[22px] p-8 md:p-10 z-10">
 
           <!-- Fechar -->
           <button

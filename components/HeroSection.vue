@@ -7,6 +7,7 @@
       alt=""
       class="absolute top-0 right-0 h-full w-auto pointer-events-none z-[0] select-none"
       style="max-width: none;"
+      fetchpriority="high"
     />
 
     <!-- Overlay mobile: cobre mais para garantir legibilidade -->

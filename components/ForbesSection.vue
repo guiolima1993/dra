@@ -37,9 +37,10 @@
         <div class="reveal-right relative flex justify-center lg:justify-end mt-4 lg:mt-0">
           <div class="forbes-image-wrap relative w-full max-w-[340px] md:max-w-[420px] lg:max-w-[600px]">
             <img
-              src="/images/imagem-criativos-forbes.png"
+              src="/images/imagem-criativos-forbes.webp"
               alt="Dra. Anayene em destaque na Forbes"
               class="forbes-image w-full h-auto object-contain"
+              loading="lazy"
             />
           </div>
         </div>

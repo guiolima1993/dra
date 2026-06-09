@@ -35,9 +35,10 @@
       <div class="reveal mt-10 md:mt-12">
         <div class="ecosystem-image-wrap w-full max-w-[860px] mx-auto rounded-[55px] border border-gold/45 bg-black/35 overflow-hidden">
           <img
-            src="/images/ecossistema-hair-of-brasil.png"
+            src="/images/ecossistema-hair-of-brasil.webp"
             alt="Ecossistema Hair of Brasil"
             class="w-full h-auto object-cover"
+            loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
           />
           <div style="display:none" class="w-full min-h-[240px] md:min-h-[360px] flex items-center justify-center text-center px-6">

@@ -11,7 +11,21 @@ export default defineNuxtConfig({
   imports: {
     exclude: ['useLocale'],
   },
-  css: ['~/assets/css/main.css'],
+  css: [
+    '@fontsource/cormorant-garamond/latin-400.css',
+    '@fontsource/cormorant-garamond/latin-500.css',
+    '@fontsource/cormorant-garamond/latin-600.css',
+    '@fontsource/cormorant-garamond/latin-700.css',
+    '@fontsource/inter/latin-300.css',
+    '@fontsource/inter/latin-400.css',
+    '@fontsource/inter/latin-500.css',
+    '@fontsource/inter/latin-600.css',
+    '@fontsource/montserrat/latin-400.css',
+    '@fontsource/montserrat/latin-500.css',
+    '@fontsource/montserrat/latin-600.css',
+    '@fontsource/montserrat/latin-700.css',
+    '~/assets/css/main.css',
+  ],
   app: {
     head: {
       title: 'Dra. Anayene Craveiro — Método FUE + Implantação Direta®',
@@ -25,16 +39,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap',
-        },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ],
     },
   },

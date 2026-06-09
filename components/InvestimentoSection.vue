@@ -15,7 +15,9 @@
       </div>
 
       <!-- Card investimento -->
-      <div class="reveal investimento-card relative mx-auto max-w-[1100px] rounded-tr-[22px] rounded-bl-[22px] border border-gold/40 overflow-hidden" style="background: url('/images/bg-inv.jpg') center/cover no-repeat;">        <div class="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
+      <div class="reveal investimento-card relative mx-auto max-w-[800px] rounded-tr-[22px] rounded-bl-[22px] border border-gold/40 overflow-hidden">
+        <img src="/images/bg-inv.webp" alt="" class="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" aria-hidden="true" />
+        <div class="absolute inset-0 bg-black/60 z-[1] pointer-events-none"></div>
       <div class="relative z-10 p-6 md:p-10 lg:p-14 text-center">
         <!-- Corner ribbon -->
         <div class="corner-ribbon"></div>
